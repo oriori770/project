@@ -4,8 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer type="module" src="index.js"></script>
 </head>
-<body>
-    <h1>שניאור רייניץ</h1>
+<body id="allScreen">
+    <head>
+        <H1 class="textTitle">BATTALION FORCE MANAGEMENT</H1>
+    </head>
+    <body id="body">
+        <div id="editBox">
+            <H1 class="textTitle">EDIT PERSONNEL</H1>
+            <HR class="greenLine" id="pass"></HR>
+            <form id="inputDiv" action="">
+                <input type="text" id="nameEdit" name="name" required>
+                
+                <input type="text" id="rankEdit" name="rank" required>
+
+                <input type="text" id="positionEdit" name="position" required>
+                
+
+                <input type="text" id="platoonEdit" name="platoon" required>
+                
+
+                <input type="text" id="missionTimeEdit" name="missionTime" required>
+                
+
+                <input type="text" id="statusEdit" name="status" required>
+                
+                <button>save changes</button>
+                <button>delete</button>
+            </form> 
+         </div>
+        <HR class="greenLine" id="pass"></HR>
+        <div id="inputbox" >
+            <form id="inputDiv" action="">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="rank">Rank:</label>
+                <input type="text" id="rank" name="rank" required>
+                
+                <label for="position">Position:</label>
+                <input type="text" id="position" name="position" required>
+                
+                <label for="platoon">Platoon:</label>
+                <input type="text" id="platoon" name="platoon" required>
+                
+                <label for="missionTime">mission Time(secendes)</label>
+                <input type="text" id="missionTime" name="missionTime" required>
+                
+                <label for="status">Status:</label>
+                <input type="text" id="status" name="status" required>
+                
+                <input type="button" id="addSoldier" value="Add Soldier">
+            </form>
+        </div>
+        <h2 class="textTitle">FORECS OVERVIEW</h2>
+        <HR class="greenLine"></HR>
+
+        <table id="tableBox">
+            <thead>
+                <tr>
+                    <th><BUtton id="sortName">full name</BUtton></th>
+                    <th>RANK</th>
+                    <th>POSITION</th>
+                    <th>PLATOON</th>
+                    <th>STATUS</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody id="soldiersList">
+                <tr>
+                    <th>jlkjlkj</th>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+
 </body>
 </html>
