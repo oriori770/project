@@ -15,6 +15,7 @@ const soldierPlatoonEdit = document.querySelector("#platoonEdit");
 const soldierMissionTimeEdit = document.querySelector("#missionTimeEdit");
 const soldierStatusEdit = document.querySelector("#statusEdit");
 const editBox = document.querySelector("#editBox");
+const editSave = document.querySelector("#editSave");
 let taskInEdit;
 let sortAscend = true;
 // stopTimer,
@@ -131,13 +132,29 @@ function buttonAction(id, name) {
   renderTable();
 }
 function openPopUp(id) {
+  const soldiersList = helper.getFromLocalStorage("List of soldiers");
   taskInEdit = id;
-  soldierNameEdit = soldiersList[index].fullName;
-  soldierRankEdit = soldiersList[index].rank;
-  soldierPositionEdit = soldiersList[index].position;
-  soldierPlatoonEdit = soldiersList[index].platoon;
-  soldierStatusEdit = soldiersList[index].status;
+  soldierNameEdit.value = soldiersList[id].fullName;
+  soldierRankEdit.value = soldiersList[id].rank;
+  soldierPositionEdit.value = soldiersList[id].position;
+  soldierPlatoonEdit.value = soldiersList[id].platoon;
+  soldierMissionTimeEdit.value = soldiersList[id].missionTime;
+  soldierStatusEdit.value = soldiersList[id].status;
   editBox.style.display = "flex";
 }
+editSave.addEventListener("click", () => saveChange());
 
+function saveChange()
+{
+  helper.deleteSoldierByIndex(taskInEdit);
+  helper.addNewSoldierToArry(
+    soldierNameEdit.value,
+    soldierRankEdit.value,
+    soldierPositionEdit.value,
+    soldierPlatoonEdit.value,
+    soldierMissionTimeEdit.value,
+    soldierStatusEdit.value
+  );
+  editBox.style.display = "none";
+}
 renderTable(data);
