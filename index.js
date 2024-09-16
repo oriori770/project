@@ -18,12 +18,7 @@ const editBox = document.querySelector("#editBox");
 const editSave = document.querySelector("#editSave");
 let taskInEdit;
 let sortAscend = true;
-// stopTimer,
-// startTimer,
-// toObject,
-// toString,
-//saveAtLocalStorge,
-//saveOnArryInLS
+
 
 //helper.addNewSoldierToArry("shneor", "samal", "north","navesiles", 30, "Retired" );
 
